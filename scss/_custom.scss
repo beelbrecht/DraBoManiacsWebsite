@@ -1,2 +1,6 @@
 
-// Core variables and mixins
+// Overwrite variables from ../node_modules/bootstrap/scss/_variables.scss
+
+$brand-primary:             #00a0be !default;
+
+$enable-rounded:            false !default;

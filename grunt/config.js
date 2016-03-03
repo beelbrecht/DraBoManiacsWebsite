@@ -13,7 +13,8 @@ module.exports = {
 
 	destDir: 'dist/',
 
-	requirejs: '../node_modules/almond/almond',
+	requirejs: '../node_modules/requirejs/require',
+	//requirejs: '../node_modules/almond/almond',
 
 	// All files that should be checked with JSHint
 	jsHintFiles: [

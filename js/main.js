@@ -3,11 +3,18 @@
  */
 
 require([
-	'modules/module'
-], function (module) {
+	'jquery',
+	'modules/initGoogleMap',
+	'collapse'
+], function ($) {
 	'use strict';
 
-	console.log(module);
-	// ausschließliches Laden / require von Standalone Modulen, die sonst nirgendwo aufgerufen werden
+	// Scroll Offset für fixierte Navbar
+	var offset = 60;
+	$('#mainNavbar ul li a').click(function(event) {
+		event.preventDefault();
+		$($(this).attr('href'))[0].scrollIntoView();
+		scrollBy(0, -offset);
+	});
 
 });

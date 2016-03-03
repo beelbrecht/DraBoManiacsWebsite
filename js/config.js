@@ -3,17 +3,18 @@
  */
 require.config({
 
-	deps: ['plugins/console', 'main'],
+	deps: ['main'],
 
 	paths: {
 		'jquery': '../node_modules/jquery/dist/jquery',
+		'collapse': '../node_modules/bootstrap/dist/js/umd/collapse',
+		'util': '../node_modules/bootstrap/dist/js/umd/util'
 	},
 
 	shim: {
-
+		'util': {
+			deps: ['jquery']
+		}
 	},
-
-	// Prevent caching issues, by adding an additional URL argument
-	urlArgs: 'bust=' + (new Date()).getDate()
 
 });
