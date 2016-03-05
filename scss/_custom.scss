@@ -1,6 +1,9 @@
 
 // Overwrite variables from ../node_modules/bootstrap/scss/_variables.scss
 
-$brand-primary:             #00a0be !default;
+$brand-primary:		#00a0be;
 
-$enable-rounded:            false !default;
+$enable-flex:		true;	// false is default
+$enable-rounded:	false;	// true is default
+//$enable-shadows:	true;	// false is default
+//$enable-gradients:	true;	// false is default

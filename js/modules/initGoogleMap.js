@@ -11,10 +11,10 @@ define([ 'modules/googleMapsLoader' ], function(GoogleMapsLoader){
 		var tvkLatLng = {lat: 51.394084, lng: 7.077798};
 		// individueller Karten Stil
 		var styles = [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}];
-		var contentString = '<div id="content"><p><strong>Turnverein 1877 e.V.</strong><br>Homebase der DraBoManiacs<br><a href="https://goo.gl/maps/5zM8mrsvWkB2" target="_blank">In Google Maps öffnen</a></p></div>';
+		var contentString = '<div id="content"><address><strong>Turnverein 1877 e.V.</strong><br>Kampmannbrücke 1<br>45257 Essen</address><a href="https://goo.gl/maps/5zM8mrsvWkB2" target="_blank">In Google Maps öffnen</a></div>';
 
-		var mapDiv = document.getElementById('map');
-		mapDiv.style.height = '75vh';
+		var mapDiv = document.getElementById('googlemap');
+		mapDiv.style.height = '80vh';
 
 		var map = new GoogleMaps.Map(mapDiv, {
 			center: tvkLatLng,
@@ -39,6 +39,11 @@ define([ 'modules/googleMapsLoader' ], function(GoogleMapsLoader){
 			infowindow.open(map, marker);
 		});
 		infowindow.open(map, marker);
+
+		var mapCenter = map.getCenter();
+		GoogleMaps.event.addDomListener(window, 'resize', function() {
+			map.setCenter(mapCenter);
+		});
 
 	}).fail(function(){
 		console.error("ERROR: Google maps library failed to load");
