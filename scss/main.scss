@@ -1,19 +1,29 @@
 /**
- * This project's description goes here
- *
  * @author  Benjamin Albrecht
  */
 
-// Load custom variables (overwrite of bootstrap and material-design-lite default values)
+// Load custom variables
 @import 'custom';
 
 // Load bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+// Load material design components
 @import '../node_modules/material-design-lite/src/variables';
 @import '../node_modules/material-design-lite/src/mixins';
 @import '../node_modules/material-design-lite/src/shadow/shadow';
 
+// own mixins
+@mixin drabo-card() {
+	@include shadow-2dp();
+	border: none;
+	border-radius: 2px;
+}
+
+// own components
+.drabo-card {
+	@include drabo-card();
+}
 
 #header {
 	min-height: 100vh;
@@ -24,15 +34,16 @@
 	background-repeat: no-repeat;
 }
 
-header h3 span {
+.drabo-teaser {
 	margin-bottom: calc(100vh / 20);
 	display: inline-block;
 	padding: 0.7rem;
 	z-index: 1;
 	position: relative;
+	font-weight: $headings-font-weight;
 }
 
-header h3 span::before {
+.drabo-teaser::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -43,24 +54,32 @@ header h3 span::before {
 	background-color: rgba(255,255,255,0.7);
 	-webkit-backdrop-filter: blur(2px);
 	backdrop-filter: blur(2px);
+	@include drabo-card();
 }
 
+// set some Facebook Page Plugin specials...
 .fb-page, .fb-page iframe[style], .fb-page span {
 	width: 100% !important;
 }
 
-.btn {
-	@include shadow-2dp();
-}
+// overwrite or extend some bootstrap components
 
-.btn:hover {
-	@include shadow-4dp();
+// Buttons
+.btn {
+	@include drabo-card();
 }
 
 button:focus {
 	outline: none;
 }
 
+// Jumbotron and Card
+.jumbotron,
+.card {
+	@include drabo-card();
+}
+
+// Navigation
 .navbar-toggler .foo {
 	transition: display 1s;
 	display: none;

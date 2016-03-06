@@ -1,13 +1,18 @@
 
 // Overwrite variables from ../node_modules/bootstrap/scss/_variables.scss
 
-$brand-primary:		#00a0be;
+// Colors
+$brand-primary:              #00a0be;
 
-$enable-flex:		true;	// false is default
-$enable-rounded:	false;	// true is default
-//$enable-shadows:	true;	// false is default
-//$enable-gradients:	true;	// false is default
+// Options
+$enable-flex:                true; // false is default
+$enable-rounded:             true; // true is default
+$enable-transitions:         true; // false is default
 
+// Typography
 $font-family-sans-serif:     'Roboto', Helvetica, Arial, sans-serif !default;
-$font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
+
+// Jumbotron Component
+$jumbotron-bg:               #ffffff;
+
+// Own variables
