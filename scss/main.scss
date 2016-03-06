@@ -20,6 +20,11 @@
 	border-radius: 2px;
 }
 
+// settings for webfont observer
+.fonts-loaded body {
+	font-family: $webfont-family-sans-serif;
+}
+
 // own components
 .drabo-card {
 	@include drabo-card();

@@ -10,7 +10,8 @@ $enable-rounded:             true; // true is default
 $enable-transitions:         true; // false is default
 
 // Typography
-$font-family-sans-serif:     'Roboto', Helvetica, Arial, sans-serif !default;
+$webfont-family-sans-serif:  'Roboto', Helvetica, Arial, sans-serif;
+$font-family-sans-serif:     sans-serif;
 
 // Jumbotron Component
 $jumbotron-bg:               #ffffff;
