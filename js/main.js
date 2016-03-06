@@ -6,7 +6,8 @@ require([
 	'jquery',
 	'fontfaceobserver',
 	'modules/initGoogleMap',
-	'collapse'
+	'collapse',
+	'carousel'
 ], function ($) {
 	'use strict';
 
