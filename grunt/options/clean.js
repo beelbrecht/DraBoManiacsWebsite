@@ -5,6 +5,7 @@
 
 module.exports = {
 	temp: ['temp'],
+	dist: ['dist'],
 	options: {
 		'force': true
 	}

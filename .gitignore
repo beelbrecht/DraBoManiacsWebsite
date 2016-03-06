@@ -5,6 +5,5 @@
 *.sublime-*
 
 css
-dist
 /*.html
 node_modules

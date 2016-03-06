@@ -76,6 +76,7 @@ module.exports = function (grunt) {
 	 * A task for building your pages
 	 */
 	grunt.registerTask('build', [
+		'clean:dist',
 		'jshint',
 		'sass:build',
 		'imagemin',

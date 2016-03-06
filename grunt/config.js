@@ -5,6 +5,8 @@
 
 var pkg = require('../package');
 
+var timestamp = new Date().getTime();
+
 module.exports = {
 
 	// A banner for distributed files (name, version, license, date)
@@ -30,7 +32,7 @@ module.exports = {
 			'js/**/*.js'
 		],
 		config: 'js/config.js',
-		dest: 'dist/<%= pkg.version %>/main.min.js'
+		dest: 'dist/' + timestamp + '/main.min.js'
 	},
 
 	// Sass files
@@ -40,7 +42,7 @@ module.exports = {
 		],
 		src: 'scss/main.scss',
 		devDest: 'css/main.css',
-		dest: 'dist/<%= pkg.version %>/main.min.css'
+		dest: 'dist/' + timestamp + '/main.min.css'
 	},
 
 	// Images
@@ -54,8 +56,8 @@ module.exports = {
 		build: {
 			src: 'temp/**.html',
 			dest: 'dist/',
-			maincss: '<%= pkg.version %>/main.min.css',
-			mainjs: '<script src="<%= pkg.version %>/main.min.js"></script>'
+			maincss: timestamp + '/main.min.css',
+			mainjs: '<script src="' + timestamp + '/main.min.js"></script>'
 		},
 
 		dev: {
