@@ -10,6 +10,7 @@
   "devDependencies": {
     "almond": "^0.3.1",
 		"bootstrap": "v4.0.0-alpha.2",
+		"material-design-lite": "1.1.2",
 		"jquery": "2.2.1",
     "requirejs": "^2.1.22",
 

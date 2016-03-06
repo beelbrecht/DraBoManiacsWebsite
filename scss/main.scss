@@ -4,11 +4,15 @@
  * @author  Benjamin Albrecht
  */
 
-// Load custom variables (overwrite of bootstrap default variables)
+// Load custom variables (overwrite of bootstrap and material-design-lite default values)
 @import 'custom';
 
 // Load bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import '../node_modules/material-design-lite/src/variables';
+@import '../node_modules/material-design-lite/src/mixins';
+@import '../node_modules/material-design-lite/src/shadow/shadow';
 
 
 #header {
@@ -23,7 +27,7 @@
 header h3 span {
 	margin-bottom: calc(100vh / 20);
 	display: inline-block;
-	padding: 0.5rem;
+	padding: 0.7rem;
 	z-index: 1;
 	position: relative;
 }
@@ -36,11 +40,40 @@ header h3 span::before {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-color: rgba(255,255,255,0.5);
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
+	background-color: rgba(255,255,255,0.7);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
 }
 
 .fb-page, .fb-page iframe[style], .fb-page span {
 	width: 100% !important;
+}
+
+.btn {
+	@include shadow-2dp();
+}
+
+.btn:hover {
+	@include shadow-4dp();
+}
+
+button:focus {
+	outline: none;
+}
+
+.navbar-toggler .foo {
+	transition: display 1s;
+	display: none;
+}
+.navbar-toggler .bar {
+	transition: display 1s;
+	display: inherit;
+}
+.navbar-toggler.collapsed .foo {
+	transition: display 1s;
+	display: inherit;
+}
+.navbar-toggler.collapsed .bar {
+	transition: display 1s;
+	display: none;
 }
