@@ -43,6 +43,14 @@
 }
 
 // own components
+
+.logo-background {
+	fill: $brand-primary;
+}
+.logo-content {
+	fill: #231f20;
+}
+
 .drabo-card {
 	@include drabo-card();
 }
