@@ -81,7 +81,8 @@ module.exports = function (grunt) {
 		'sass:build',
 		'imagemin',
 		'requirejs',
-		'pages:build'
+		'pages:build',
+		'copy'
 	]);
 
 };
