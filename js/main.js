@@ -19,6 +19,14 @@ require([
 		scrollBy(0, -offset);
 	});
 
+	// Menü Collapse Events
+	$('#mainNavbar').on('show.bs.collapse', function () {
+		$('#mainNavbarToggle').addClass("is-active");
+	});
+	$('#mainNavbar').on('hide.bs.collapse', function () {
+		$('#mainNavbarToggle').removeClass("is-active");
+	});
+
 	// if the class is already set, we're good.
 	if( window.document.documentElement.className.indexOf( "fonts-loaded" ) < 0 ) {
 

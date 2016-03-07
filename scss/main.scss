@@ -13,6 +13,11 @@
 @import '../node_modules/material-design-lite/src/mixins';
 @import '../node_modules/material-design-lite/src/shadow/shadow';
 
+// Load Hamburger Menü Icon
+// see: https://github.com/callmenick/Animating-Hamburger-Icons
+@import '_components.hamburger';
+
+
 // own mixins
 @mixin drabo-card() {
 	@include shadow-2dp();
