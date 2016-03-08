@@ -1,8 +1,7 @@
 /**
  * @author  Benjamin Albrecht
  */
-
-// Load custom variables
+ // Load custom variables
 @import 'custom';
 
 // Load bootstrap
@@ -81,7 +80,6 @@
 
 .drabo-glass {
 	display: inline-block;
-	padding: 0.7rem;
 	z-index: 1;
 	position: relative;
 }
@@ -111,6 +109,7 @@ button:focus {
 .jumbotron,
 .card {
 	@include drabo-card();
+	margin-bottom: 0;
 }
 
 // Navigation
@@ -140,4 +139,11 @@ button:focus {
 	left: 5%;
 	text-align: inherit;
 	padding-bottom: 0;
+	top: 0.7rem;
+	bottom: initial;
+	padding-top: 0;
+}
+.carousel-caption span {
+	padding: 0.3rem;
+	@include drabo-card();
 }
