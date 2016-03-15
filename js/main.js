@@ -12,7 +12,7 @@ require([
 	'use strict';
 
 	// Scroll Offset für fixierte Navbar
-	var offset = 60;
+	var offset = 90;
 	$('#mainNavbar ul li a').click(function(event) {
 		event.preventDefault();
 		$($(this).attr('href'))[0].scrollIntoView();
