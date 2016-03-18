@@ -63,6 +63,12 @@
 	background-repeat: no-repeat;
 }
 
+@include media-breakpoint-up(md) {
+	#header {
+		padding-top: 8rem;
+	}
+}
+
 .drabo-teaser {
 	margin-bottom: calc(100vh / 20);
 	display: inline-block;
@@ -101,7 +107,6 @@
 .btn {
 	@include drabo-card();
 }
-
 button:focus {
 	outline: none;
 }
@@ -114,21 +119,23 @@ button:focus {
 }
 
 // Navigation
-.navbar-toggler .foo {
-	transition: display 1s;
-	display: none;
+@include media-breakpoint-up(md) {
+	.navbar-toggleable-sm {
+		transition: none !important;
+		height: initial !important;
+	}
 }
-.navbar-toggler .bar {
-	transition: display 1s;
-	display: inherit;
-}
-.navbar-toggler.collapsed .foo {
-	transition: display 1s;
-	display: inherit;
-}
-.navbar-toggler.collapsed .bar {
-	transition: display 1s;
-	display: none;
+@include media-breakpoint-down(sm) {
+	.navbar-nav {
+		margin-top: 1rem;
+	}
+	.navbar-nav .nav-item {
+		float: none;
+		text-align: right;
+	}
+	.navbar-nav .nav-item + .nav-item {
+		margin-left: 0;
+	}
 }
 
 // Carousel
@@ -149,8 +156,7 @@ button:focus {
 	@include drabo-card();
 }
 
-@include media-breakpoint-up(md) {
-	#header {
-		padding-top: 8rem;
-	}
+// Alert
+.alert {
+	margin-bottom: 0;
 }
