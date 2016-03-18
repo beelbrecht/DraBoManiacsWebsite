@@ -4,6 +4,8 @@
 *.sass-cache
 *.sublime-*
 
-css
+dist
 /*.html
+src/css
+src/*.html
 node_modules

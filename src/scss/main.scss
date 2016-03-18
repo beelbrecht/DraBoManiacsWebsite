@@ -5,12 +5,12 @@
 @import 'custom';
 
 // Load bootstrap
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 // Load material design components
-@import '../node_modules/material-design-lite/src/variables';
-@import '../node_modules/material-design-lite/src/mixins';
-@import '../node_modules/material-design-lite/src/shadow/shadow';
+@import '../../node_modules/material-design-lite/src/variables';
+@import '../../node_modules/material-design-lite/src/mixins';
+@import '../../node_modules/material-design-lite/src/shadow/shadow';
 
 // Load Hamburger Menü Icon
 // see: https://github.com/callmenick/Animating-Hamburger-Icons

@@ -4,8 +4,8 @@
 'use strict';
 
 module.exports = {
-	temp: ['temp'],
 	dist: ['dist'],
+	temp: ['temp'],
 	options: {
 		'force': true
 	}

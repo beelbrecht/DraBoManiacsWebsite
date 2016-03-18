@@ -15,8 +15,7 @@ module.exports = {
 
 	destDir: 'dist/',
 
-	requirejs: '../node_modules/requirejs/require',
-	//requirejs: '../node_modules/almond/almond',
+	requirejs: '../../node_modules/requirejs/require',
 
 	// All files that should be checked with JSHint
 	jsHintFiles: [
@@ -29,25 +28,25 @@ module.exports = {
 	// JavaScript files
 	js: {
 		files: [
-			'js/**/*.js'
+			'src/js/**/*.js'
 		],
-		config: 'js/config.js',
-		dest: 'dist/' + timestamp + '/main.min.js'
+		config: 'src/js/config.js',
+		dest: 'dist/' + timestamp  + '/main.min.js'
 	},
 
 	// Sass files
 	sass: {
 		files: [
-			'scss/**/*.scss'
+			'src/scss/**/*.scss'
 		],
-		src: 'scss/main.scss',
-		devDest: 'css/main.css',
-		dest: 'dist/' + timestamp + '/main.min.css'
+		src: 'src/scss/main.scss',
+		devDest: 'src/css/main.css',
+		dest: 'dist/' + timestamp  + '/main.min.css'
 	},
 
 	// Images
 	img: {
-		src: 'img/',
+		src: 'src/img/',
 		dest: 'dist/img/'
 	},
 
@@ -56,15 +55,15 @@ module.exports = {
 		build: {
 			src: 'temp/**.html',
 			dest: 'dist/',
-			maincss: timestamp + '/main.min.css',
-			mainjs: '<script src="' + timestamp + '/main.min.js"></script>'
+			maincss: '' + timestamp  + '/main.min.css',
+			mainjs: '<script src="' + timestamp  + '/main.min.js"></script>'
 		},
 
 		dev: {
 			src: 'temp/**.html',
-			dest: '.',
+			dest: 'src/',
 			maincss: 'css/main.css',
-			mainjs: '<script data-main="js/config" src="node_modules/requirejs/require.js"></script>'
+			mainjs: '<script data-main="js/config" src="../node_modules/requirejs/require.js"></script>'
 		}
 	}
 };

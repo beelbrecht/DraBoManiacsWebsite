@@ -17,7 +17,7 @@ module.exports = {
 	},
 
 	pages: {
-		files: 'templates/**/*.html',
+		files: 'src/templates/**/*.html',
 		tasks: 'pages:dev'
 	}
 };
