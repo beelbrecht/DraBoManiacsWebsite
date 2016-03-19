@@ -24,14 +24,14 @@
 	border-radius: 2px;
 }
 
-@mixin drabo-glass() {
+@mixin drabo-glass($color:#ffffff, $alpha:0.7) {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba($color, $alpha);
 	-webkit-backdrop-filter: blur(2px);
 	backdrop-filter: blur(2px);
 }
@@ -42,6 +42,10 @@
 }
 
 // own components
+
+.bg-white {
+	background-color: #ffffff;
+}
 
 .logo-background {
 	fill: $brand-primary;
@@ -54,17 +58,22 @@
 	@include drabo-card();
 }
 
-#header {
-	min-height: 100vh;
+.teaser-image {
+	height: 100vh;
+}
+.teaser-image img {
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+}
+
+.teaser-slogan {
 	padding-top: 5.5rem;
-	background-image: url('../img/TeaserImage.1.jpg');
-	background-size: cover;
-	background-position: 55% 50%;
-	background-repeat: no-repeat;
+	min-height: 100vh;
 }
 
 @include media-breakpoint-up(md) {
-	#header {
+	.teaser-slogan {
 		padding-top: 8rem;
 	}
 }
@@ -101,6 +110,30 @@
 	width: 100% !important;
 }
 
+// Parallax Effect
+.parallax {
+	perspective: 1px;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.parallax__layer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.parallax__layer--base {
+	transform: translateZ(0);
+}
+.parallax__layer--back {
+	transform: translateZ(-1px) scale(2);
+}
+.parallax__layer--deep {
+	transform: translateZ(-2px) scale(3);
+}
+
 // overwrite or extend some bootstrap components
 
 // Buttons
@@ -119,6 +152,11 @@ button:focus {
 }
 
 // Navigation
+.navbar::before {
+	content: "";
+	@include drabo-glass($gray-dark, 0.95);
+}
+
 @include media-breakpoint-up(md) {
 	.navbar-toggleable-sm {
 		transition: none !important;
