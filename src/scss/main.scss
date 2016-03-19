@@ -59,7 +59,11 @@
 }
 
 .teaser-image {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100vh;
+	width: 100vw;
 }
 .teaser-image img {
 	width: 100vw;
@@ -108,30 +112,6 @@
 // set some Facebook Page Plugin specials...
 .fb-page, .fb-page iframe[style], .fb-page span {
 	width: 100% !important;
-}
-
-// Parallax Effect
-.parallax {
-	perspective: 1px;
-	height: 100vh;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-.parallax__layer {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-.parallax__layer--base {
-	transform: translateZ(0);
-}
-.parallax__layer--back {
-	transform: translateZ(-1px) scale(2);
-}
-.parallax__layer--deep {
-	transform: translateZ(-2px) scale(3);
 }
 
 // overwrite or extend some bootstrap components
