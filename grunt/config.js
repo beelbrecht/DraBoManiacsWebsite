@@ -20,9 +20,7 @@ module.exports = {
 	// All files that should be checked with JSHint
 	jsHintFiles: [
 		'Gruntfile.js',
-		'js/**/*.js',
-		'test/*.js',
-		'test/specs/**/*.js'
+		'src/js/**/*.js'
 	],
 
 	// JavaScript files

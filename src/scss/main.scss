@@ -58,17 +58,29 @@
 	@include drabo-card();
 }
 
-.teaser-image {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
-}
-.teaser-image img {
-	width: 100vw;
-	height: 100vh;
-	object-fit: cover;
+.teaser {
+	&__image-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+
+		&.compat-object-fit {
+			background-size: cover;
+			background-position: center center;
+
+			.teaser__featured-image {
+				opacity: 0;
+			}
+		}
+	}
+
+	&__featured-image {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+	}
 }
 
 .teaser-slogan {
