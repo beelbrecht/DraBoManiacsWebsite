@@ -121,6 +121,26 @@
 	@include drabo-glass();
 }
 
+.list-centered {
+	li:not(:last-child) {
+		position: relative;
+		margin-bottom: 0.25rem;
+		padding-bottom: 0.25rem;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			width: 4rem;
+			height: 0;
+			border: 0;
+			border-top: $hr-border-width solid $hr-border-color;
+			margin-left: -2rem;
+		}
+	}
+}
+
 // set some Facebook Page Plugin specials...
 .fb-page, .fb-page iframe[style], .fb-page span {
 	width: 100% !important;
