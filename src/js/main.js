@@ -11,9 +11,10 @@ require([
 ], function ($) {
 	'use strict';
 
-	// Scroll Offset für fixierte Navbar
-	var offset = 90;
+	// Menüscrolling
 	$('#mainNavbar ul li a').click(function(event) {
+		// Scroll Offset für fixierte Navbar
+		var offset = 90;
 		event.preventDefault();
 		$($(this).attr('href'))[0].scrollIntoView();
 		scrollBy(0, -offset);
@@ -27,7 +28,7 @@ require([
 		$('#mainNavbarToggle').removeClass("is-active");
 	});
 
-	// if the class is already set, we're good.
+	// Font Face Observer. Asynchrones Laden von Webfonts überwachen.
 	if( window.document.documentElement.className.indexOf( "fonts-loaded" ) < 0 ) {
 
 		var fontRoboto300 = new window.FontFaceObserver( "Roboto", {
@@ -75,6 +76,7 @@ require([
 			});
 	}
 
+	// Fallback, falls objectfit nicht zur Verfügung steht.
 	if ( ! window.Modernizr.objectfit ) {
 		$('.teaser__image-container').each(function () {
 			var $container = $(this),
