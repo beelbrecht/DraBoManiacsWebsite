@@ -1,0 +1,212 @@
+/**
+ * @author  Benjamin Albrecht
+ */
+ // Load custom variables
+@import 'custom';
+
+// Load bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Load material design components
+@import '../../node_modules/material-design-lite/src/variables';
+@import '../../node_modules/material-design-lite/src/mixins';
+@import '../../node_modules/material-design-lite/src/shadow/shadow';
+
+// Load Hamburger Menü Icon
+// see: https://github.com/callmenick/Animating-Hamburger-Icons
+@import '_components.hamburger';
+
+
+// own mixins
+@mixin drabo-card() {
+	@include shadow-2dp();
+	border: none;
+	border-radius: 2px;
+}
+
+@mixin drabo-glass($color:#ffffff, $alpha:0.7) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-color: rgba($color, $alpha);
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+}
+
+// settings for webfont observer
+.fonts-loaded body {
+	font-family: $webfont-family-sans-serif;
+}
+
+// own components
+
+.bg-white {
+	background-color: #ffffff;
+}
+
+.logo-background {
+	fill: $brand-primary;
+}
+.logo-content {
+	fill: #231f20;
+}
+
+.drabo-card {
+	@include drabo-card();
+}
+
+.teaser {
+	&__image-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+
+		&.compat-object-fit {
+			background-size: cover;
+			background-position: center center;
+
+			.teaser__featured-image {
+				opacity: 0;
+			}
+		}
+	}
+
+	&__featured-image {
+		width: 100%;
+		height: 100vh;
+		object-fit: cover;
+	}
+}
+
+.teaser-slogan {
+	padding-top: 5.5rem;
+	min-height: 100vh;
+}
+
+@include media-breakpoint-up(md) {
+	.teaser-slogan {
+		padding-top: 8rem;
+	}
+}
+
+.drabo-teaser {
+	margin-bottom: calc(100vh / 20);
+	display: inline-block;
+	padding: 0.7rem;
+	z-index: 1;
+	position: relative;
+	font-weight: $headings-font-weight;
+	@include drabo-card();
+}
+
+.drabo-teaser::before {
+	content: "";
+	border-radius: 2px;
+	@include drabo-glass();
+}
+
+.drabo-glass {
+	display: inline-block;
+	z-index: 1;
+	position: relative;
+}
+
+.drabo-glass::before {
+	content: "";
+	@include drabo-glass();
+}
+
+.list-centered {
+	li:not(:last-child) {
+		position: relative;
+		margin-bottom: 0.25rem;
+		padding-bottom: 0.25rem;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			width: 4rem;
+			height: 0;
+			border: 0;
+			border-top: $hr-border-width solid $hr-border-color;
+			margin-left: -2rem;
+		}
+	}
+}
+
+// set some Facebook Page Plugin specials...
+.fb-page, .fb-page iframe[style], .fb-page span {
+	width: 100% !important;
+}
+
+// overwrite or extend some bootstrap components
+
+// Buttons
+.btn {
+	@include drabo-card();
+}
+button:focus {
+	outline: none;
+}
+
+// Jumbotron and Card
+.jumbotron,
+.card {
+	@include drabo-card();
+	margin-bottom: 0;
+}
+
+// Navigation
+.navbar::before {
+	content: "";
+	@include drabo-glass($gray-dark, 0.95);
+}
+
+@include media-breakpoint-up(md) {
+	.navbar-toggleable-sm {
+		transition: none !important;
+		height: initial !important;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.navbar-nav {
+		margin-top: 1rem;
+	}
+	.navbar-nav .nav-item {
+		float: none;
+		text-align: right;
+	}
+	.navbar-nav .nav-item + .nav-item {
+		margin-left: 0;
+	}
+}
+
+// Carousel
+.carousel-indicators {
+	margin-bottom: 0px;
+	bottom: 0px;
+}
+.carousel-caption {
+	left: 5%;
+	text-align: inherit;
+	padding-bottom: 0;
+	top: 0.7rem;
+	bottom: initial;
+	padding-top: 0;
+}
+.carousel-caption span {
+	padding: 0.3rem;
+	@include drabo-card();
+}
+
+// Alert
+.alert {
+	margin-bottom: 0;
+}

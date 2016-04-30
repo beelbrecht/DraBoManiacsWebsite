@@ -10,9 +10,13 @@ module.exports = {
 		files: [
 			{
 				expand: true,
-				src: ['.htaccess'],
-				dest: 'dist',
-				filter: 'isFile'
+				cwd: 'src/',
+				src: ['*', '.*', '!*.html'],
+				dest: 'dist/',
+				filter: 'isFile',
+				options: {
+					mode: true
+				}
 			}
 		]
 	}

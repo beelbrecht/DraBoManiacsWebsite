@@ -5,7 +5,7 @@
 $brand-primary:              #00aec5;
 
 // Options
-$enable-flex:                true; // false is default
+$enable-flex:                false; // false is default
 $enable-rounded:             true; // true is default
 $enable-transitions:         true; // false is default
 
@@ -20,6 +20,12 @@ $jumbotron-bg:               #ffffff;
 $carousel-text-shadow:       none;
 $carousel-caption-color:     #373a3c;
 
+// Navbar
+$navbar-dark-color:                 rgba(255,255,255,.75); //rgba(255,255,255,.5) !default;
+$navbar-dark-hover-color:           rgba(255,255,255,1); //rgba(255,255,255,.75) !default;
+$navbar-dark-active-color:          rgba(255,255,255,1); //rgba(255,255,255,1) !default;
+$navbar-dark-disabled-color:        rgba(255,255,255,.5); //rgba(255,255,255,.25) !default;
+
 // Hamburger Menü Component variables
 $hamburger-button-width: 2.5rem;                 // The width of the button area
 $hamburger-button-height: 2.5rem;                // The height of the button area
@@ -28,6 +34,4 @@ $hamburger-button-pad: 0;                        // The left/right padding betwe
 $hamburger-button-bar-space: .4rem;              // The spacing between button bars
 $hamburger-button-transistion-duration: 0.2s;    // The transition duration
 $hamburger-button-background-color: transparent; // rgba(255,50,100,0.7) !default; // The background color of the button
-$hamburger-bar-color: rgba(255,255,255,1);       // The color of the button bars
-
-// Own variables
+$hamburger-bar-color: $navbar-dark-color;       // The color of the button bars
