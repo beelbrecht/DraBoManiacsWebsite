@@ -49,13 +49,13 @@ module.exports = function (grunt) {
 	 */
 	// Tasks for generating static pages
 	grunt.registerTask('pages:dev', [
-		'concat',
+		'concat:htmlindex',
 		'replace:dev',
 		'clean:temp'
 	]);
 
 	grunt.registerTask('pages:build', [
-		'concat',
+		'concat:htmlindex',
 		'replace:build',
 		'clean:temp'
 	]);
@@ -65,6 +65,7 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('dev', [
 		'jshint',
+		'concat:jsinit',
 		'sass:dev',
 		'pages:dev'
 	]);
@@ -78,6 +79,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'clean:dist',
 		'jshint',
+		'concat:jsinit',
 		'sass:build',
 		'imagemin',
 		'requirejs',
