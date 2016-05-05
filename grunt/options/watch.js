@@ -13,7 +13,10 @@ module.exports = {
 
 	js: {
 		files: config.jsHintFiles,
-		tasks: 'jshint'
+		tasks: [
+			'jshint',
+			'concat:jsinit'
+		]
 	},
 
 	pages: {

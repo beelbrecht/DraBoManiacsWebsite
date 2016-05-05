@@ -20,7 +20,8 @@ module.exports = {
 	// All files that should be checked with JSHint
 	jsHintFiles: [
 		'Gruntfile.js',
-		'src/js/**/*.js'
+		'src/js/**/*.js',
+		'!src/js/libs/**/*.js'
 	],
 
 	// JavaScript files
@@ -62,6 +63,25 @@ module.exports = {
 			dest: 'src/',
 			maincss: 'css/main.css',
 			mainjs: '<script data-main="js/config" src="../node_modules/requirejs/require.js"></script>'
+		}
+	},
+
+	concat: {
+		htmlindex: {
+			src: [
+				'src/templates/header.html',
+				'src/templates/index.html',
+				'src/templates/footer.html'
+			],
+			dest: 'temp/index.html'
+		},
+		jsinit: {
+			src: [
+				'src/js/libs/modernizr-custom.js',
+				'node_modules/fontfaceobserver/fontfaceobserver.js',
+				'src/js/misc/fontfaceobserver.config.js'
+			],
+			dest: 'src/init.js'
 		}
 	}
 };
