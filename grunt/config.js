@@ -55,7 +55,7 @@ module.exports = {
 			src: 'temp/**.html',
 			dest: 'dist/',
 			maincss: '' + timestamp  + '/main.min.css',
-			mainjs: '<script src="' + timestamp  + '/main.min.js"></script>'
+			mainjs: '<script async defer src="' + timestamp  + '/main.min.js"></script>'
 		},
 
 		dev: {
